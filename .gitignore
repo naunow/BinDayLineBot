@@ -1,0 +1,4 @@
+/.vs
+/LambdaHomeAssistAppApi/bin
+/LambdaHomeAssistAppApi/obj
+/LambdaHomeAssistAppApi/aws-lambda-tools-defaults.json
