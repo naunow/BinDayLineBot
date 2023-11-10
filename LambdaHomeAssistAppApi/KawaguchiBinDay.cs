@@ -18,6 +18,9 @@ namespace LambdaHomeAssistAppApi
             Can,
             Metals,
             Paper,
+            Glasses,
+            Batteries,
+            Potteries,
         }
 
         public static RecycleCalendar GetBinSchedule(DateTime today)
@@ -48,31 +51,37 @@ namespace LambdaHomeAssistAppApi
                 todaysBin.Add(BinType.ToxicGarbage);
             }
 
-            // 毎週水 プラ
-            if ((int)dayOfWeek == 3)
-            {
-                todaysBin.Add(BinType.PlasticContainers);
-            }
-
-            // 第1,3水 ペットボトル・布類
-            if ((week == 1 || week == 3) && (int)dayOfWeek == 3)
+            // 第1,3火 ペットボトル
+            if ((week == 1 || week == 3) && dayOfWeek == DayOfWeek.Tuesday)
             {
                 todaysBin.Add(BinType.PETBottles);
-                todaysBin.Add(BinType.Textiles);
             }
 
-            // 第1,3木 鉄・紙
-            if ((week == 1 || week == 3) && (int)dayOfWeek == 4)
+            // 第1水 鉄・陶器・充電式小型家電
+            if (week == 1 && dayOfWeek == DayOfWeek.Wednesday)
             {
                 todaysBin.Add(BinType.Metals);
-                todaysBin.Add(BinType.Paper);
+                todaysBin.Add(BinType.Potteries);
+                todaysBin.Add(BinType.Batteries);
             }
 
-            // 第2,4水 缶・ビン
-            if ((week == 2 || week == 4) && (int)dayOfWeek == 3)
+            // 第2水 ガラス
+            if (week == 2 && dayOfWeek == DayOfWeek.Wednesday)
+            {
+                todaysBin.Add(BinType.Glasses);
+            }
+
+            // 第3水 飲料缶・スプレー缶
+            if (week == 3 && dayOfWeek == DayOfWeek.Wednesday)
             {
                 todaysBin.Add(BinType.Can);
-                todaysBin.Add(BinType.Bottles);
+            }
+
+            // 第4水 紙・布
+            if (week == 4 && dayOfWeek == DayOfWeek.Wednesday)
+            {
+                todaysBin.Add(BinType.Paper);
+                todaysBin.Add(BinType.Textiles);
             }
 
             return todaysBin;
