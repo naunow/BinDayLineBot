@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using static LambdaHomeAssistAppApi.KawaguchiBinDay;
 
 namespace LambdaHomeAssistAppApi
 {
@@ -28,6 +29,10 @@ namespace LambdaHomeAssistAppApi
                     KawaguchiBinDay.BinType.Can => "Can",
                     KawaguchiBinDay.BinType.Metals => "Metals",
                     KawaguchiBinDay.BinType.Paper => "Paper/Cardboard",
+                    KawaguchiBinDay.BinType.Glasses => "Glasses",
+                    KawaguchiBinDay.BinType.Batteries => "rechargeable small home appliances",
+                    KawaguchiBinDay.BinType.Potteries => "Potteries",
+
                     _ => throw new Exception("当てはまるゴミ区分がありません。"),
                 };
             }
@@ -48,6 +53,9 @@ namespace LambdaHomeAssistAppApi
                     KawaguchiBinDay.BinType.Can => "かん",
                     KawaguchiBinDay.BinType.Metals => "金属",
                     KawaguchiBinDay.BinType.Paper => "紙/段ボール",
+                    KawaguchiBinDay.BinType.Glasses => "ガラス",
+                    KawaguchiBinDay.BinType.Batteries => "充電式小型家電",
+                    KawaguchiBinDay.BinType.Potteries => "陶器",
                     _ => throw new Exception("当てはまるゴミ区分がありません。"),
                 };
             }

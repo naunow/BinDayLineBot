@@ -48,7 +48,6 @@ namespace LambdaHomeAssistAppApi
             if ((int)dayOfWeek == 1 || (int)dayOfWeek == 4)
             {
                 todaysBin.Add(BinType.RegularGarbage);
-                todaysBin.Add(BinType.ToxicGarbage);
             }
 
             // 第1,3火 ペットボトル
